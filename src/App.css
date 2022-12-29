@@ -1,38 +1,191 @@
-.App {
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  width: 100%;
+  padding: 12px 24px;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 18px;
+  color: #575756;
+  background-color: transparent;
+  margin-left: 0px;
+  box-shadow: inset 0px 0px 0px 4px #ddd6e8;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+ul {
+  list-style: none; 
+  padding: 0;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.ingredient-list li {
+  background: #ddd6e8;
+  padding: .4em .4em .4em .8em;
+  margin: .5em auto .5em auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 22px;
+  width: 60%;
+  min-width: 500px;
+}
+
+.energetic-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+li {
+  display: block;    
+}
+
+.energetic-list li {
+  width: 150px;
+  font-size: 24px;
+  text-align: left;
+  padding-left: 25px;
+  position: relative;
+}
+
+.energetic-list li::after {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  content: "";
+  top: calc(50% - 7px);
+  left: 0;
+  background-color: red;
+}
+
+.energetic-list .protein::after {
+  background-color: greenyellow;
+}
+
+.energetic-list .fat::after {
+  background-color: yellow;
+}
+
+.recipe-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.recipe-item img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.form {
+  min-width: 500px;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.form__search input {
+  flex: 1;
+  height: 57px;
+  box-sizing: border-box;
+}
+
+h2 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.select-filter__control {
+  border-color: black !important;
+  border-radius: 5px !important;
+  height: 53px !important;
+  background-color: transparent !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.select-filter__value-container {
+  box-shadow: inset 0 0 0px 2px  #ddd6e8!important;
+  border: 1px solid #ddd6e8 !important;
+  height: 100% !important;
+  padding-left: 20px !important;
+}
+
+.select-filter__placeholder {
+  font-size: 18px;
+}
+
+.select-filter__indicators {
+  width: 64px !important;
+  border: 2px solid grey !important;
+  border-left-width: 4px !important;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input::placeholder {
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.select-filter__indicator-separator {
+  display: none;
+}
+
+.select-filter__menu {
+  font-size: 18px;
+}
+
+.select-filter__option {
+  cursor: pointer !important;
+  font-size: 18px !important;
+}
+
+.select-filter__option--is-focused {
+  background-color: #ddd6e8 !important;
+}
+
+.select-filter__single-value {
+  font-size: 18px !important
 }
